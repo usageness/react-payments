@@ -4,11 +4,11 @@ import { COLORS } from "constants/color";
 import { textAlign, buttonType } from "types";
 
 interface ButtonComponent {
-  children: React.ReactNode;
-  onClick: () => void;
-  disabled: boolean;
-  type: buttonType;
-  textAlign: textAlign;
+  children?: React.ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: buttonType;
+  textAlign?: textAlign;
 }
 
 export const Button = ({

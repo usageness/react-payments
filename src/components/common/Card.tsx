@@ -8,7 +8,7 @@ interface CardComponent {
   cardNumbers: cardNumbers;
   expireDate: expireDate;
   ownerName: ownerName;
-  handleModalVisible: () => void;
+  handleModalVisible?: () => void;
 }
 
 export const Card = ({

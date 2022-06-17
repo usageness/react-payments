@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 interface PageTitleComponent {
   children: React.ReactNode;
-  onClick: () => void;
-  visible: boolean;
+  onClick?: () => void;
+  visible?: boolean;
 }
 
 export const PageTitle = ({

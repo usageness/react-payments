@@ -1,10 +1,10 @@
 interface FlexWrapperType {
-  width: string;
-  height: string;
-  flexDirection: flexDirection;
-  justifyContent: justifyContent;
-  alignItems: alignItems;
-  gap: string;
+  width?: string;
+  height?: string;
+  flexDirection?: flexDirection;
+  justifyContent?: justifyContent;
+  alignItems?: alignItems;
+  gap?: string;
 }
 
 type textAlign = "left" | "center" | "right";

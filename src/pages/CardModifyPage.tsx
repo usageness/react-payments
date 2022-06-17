@@ -19,7 +19,7 @@ export const CardModifyPage = () => {
 
   const isEditMode = searchParams.get("edit");
 
-  const setCardNickname = (e) => {
+  const setCardNickname = (e: React.FormEvent) => {
     e.preventDefault();
 
     cards.list[id].cardNickname =
@@ -32,7 +32,7 @@ export const CardModifyPage = () => {
     <>
       {cards.list && (
         <>
-          <Form onSubmit={(e) => setCardNickname(e)}>
+          <Form onSubmit={(e: React.FormEvent) => setCardNickname(e)}>
             <FlexWrapper
               height="calc(100vh - 50px)"
               flexDirection="column"

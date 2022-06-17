@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 interface FormComponent {
-  onSubmit: () => void;
+  onSubmit: (e: React.FormEvent) => void;
   children: React.ReactNode;
 }
 

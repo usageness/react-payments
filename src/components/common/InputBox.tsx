@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { justifyContent } from "types";
 
 interface InputBoxComponent {
-  children: React.ReactNode;
-  width: string;
-  color: string;
-  backgroundColor: string;
-  justifyContent: justifyContent;
-  padding: string;
+  children?: React.ReactNode;
+  width?: string;
+  color?: string;
+  backgroundColor?: string;
+  justifyContent?: justifyContent;
+  padding?: string;
 }
 
 export const InputBox = ({

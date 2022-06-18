@@ -8,13 +8,23 @@ import {
   InputTitle,
   InputContainer,
 } from "components/common";
+import { expireDate } from "types";
+
+interface CardExpireDateInputComponent {
+  expireDate: expireDate;
+  isValid: boolean;
+  handleExpireDateInput: (
+    state: expireDate | ((prevState: expireDate) => expireDate)
+  ) => void;
+  handleCardExpireCheck: (isValid: boolean) => void;
+}
 
 export const CardExpireDateInput = ({
   expireDate,
   isValid,
   handleExpireDateInput,
   handleCardExpireCheck,
-}) => {
+}: CardExpireDateInputComponent) => {
   useEffect(() => {
     if (expireDate.year === "" || expireDate.month === "") {
       return;
@@ -24,36 +34,66 @@ export const CardExpireDateInput = ({
     handleCardExpireCheck(isValidate);
   }, [expireDate]);
 
-  const handleMonthInput = (e) => {
-    if (isNaN(e.target.value) || parseInt(e.target.value) > 12) {
+  const handleMonthInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+
+    if (Number.isNaN(value) || parseInt(value) > 12) {
       return;
     }
 
-    handleExpireDateInput((prev) => ({ ...prev, month: e.target.value }));
+    handleExpireDateInput(
+      (prev: expireDate): expireDate => ({
+        ...prev,
+        month: value,
+      })
+    );
   };
 
-  const handleMonthBlur = (e) => {
-    if (e.target.value.length === 1) {
-      e.target.value = "0" + e.target.value;
-    }
+  const handleMonthBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
 
-    handleExpireDateInput((prev) => ({ ...prev, month: e.target.value }));
-  };
-
-  const handleYearInput = (e) => {
-    if (isNaN(e.target.value)) {
+    if (value.length === 1) {
+      handleExpireDateInput((prev: expireDate) => ({
+        ...prev,
+        month: "0" + value,
+      }));
       return;
     }
 
-    handleExpireDateInput((prev) => ({ ...prev, year: e.target.value }));
+    handleExpireDateInput((prev: expireDate) => ({
+      ...prev,
+      month: value,
+    }));
   };
 
-  const handleYearBlur = (e) => {
-    if (e.target.value.length === 1) {
-      e.target.value = "0" + e.target.value;
+  const handleYearInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+
+    if (Number.isNaN(value)) {
+      return;
     }
 
-    handleExpireDateInput((prev) => ({ ...prev, year: e.target.value }));
+    handleExpireDateInput((prev: expireDate) => ({
+      ...prev,
+      year: value,
+    }));
+  };
+
+  const handleYearBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+
+    if (value.length === 1) {
+      handleExpireDateInput((prev: expireDate) => ({
+        ...prev,
+        year: "0" + value,
+      }));
+      return;
+    }
+
+    handleExpireDateInput((prev: expireDate) => ({
+      ...prev,
+      year: value,
+    }));
   };
 
   return (
@@ -90,7 +130,7 @@ export const CardExpireDateInput = ({
 
 const { currentYear, currentMonth } = currentDate();
 
-const isCardExpireDateValidate = (expireDate) => {
+const isCardExpireDateValidate = (expireDate: expireDate) => {
   if (parseInt(expireDate.year) < parseInt(currentYear)) {
     return false;
   }

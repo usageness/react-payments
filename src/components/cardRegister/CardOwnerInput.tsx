@@ -2,8 +2,16 @@ import React from "react";
 
 import { InputBasic, InputTitle, InputContainer } from "components/common";
 
-export const CardOwnerInput = ({ ownerName, handleOwnerNameInput }) => {
-  const handleOwnerNameChange = (e) => {
+interface CardOwnerInputComponent {
+  ownerName: string;
+  handleOwnerNameInput: (value: string) => void;
+}
+
+export const CardOwnerInput = ({
+  ownerName,
+  handleOwnerNameInput,
+}: CardOwnerInputComponent) => {
+  const handleOwnerNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleOwnerNameInput(e.target.value);
   };
 

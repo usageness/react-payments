@@ -3,13 +3,18 @@ import React from "react";
 import styled from "styled-components";
 
 interface InputTitleComponent {
-  children: React.ReactNode;
-  isValid: boolean;
+  children?: React.ReactNode;
+  isValid?: boolean;
+  htmlFor?: string;
 }
 
-export const InputTitle = ({ children, isValid }: InputTitleComponent) => {
+export const InputTitle = ({
+  children,
+  isValid,
+  htmlFor,
+}: InputTitleComponent) => {
   return (
-    <InputTitleStyle>
+    <InputTitleStyle htmlFor={htmlFor}>
       {children} <ValidChecker isValid={isValid}>✔️</ValidChecker>
     </InputTitleStyle>
   );

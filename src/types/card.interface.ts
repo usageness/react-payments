@@ -26,6 +26,17 @@ interface cardNumbers {
   fourthNumber: string;
 }
 
+type cardNumberInputName =
+  | "firstNumber"
+  | "secondNumber"
+  | "thirdNumber"
+  | "fourthNumber";
+
+interface cardNumberInputObject {
+  name: cardNumberInputName;
+  type: "text" | "password";
+}
+
 interface expireDate {
   month: string;
   year: string;
@@ -33,4 +44,12 @@ interface expireDate {
 
 type ownerName = string;
 
-export type { card, cardType, cardNumbers, expireDate, ownerName };
+export type {
+  card,
+  cardType,
+  cardNumbers,
+  cardNumberInputName,
+  cardNumberInputObject,
+  expireDate,
+  ownerName,
+};

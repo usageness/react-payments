@@ -7,8 +7,25 @@ import {
   InputTitle,
   InputContainer,
 } from "components/common";
+import {
+  cardNumbers,
+  cardNumberInputName,
+  cardType,
+  cardNumberInputObject,
+} from "types";
 
-const DEFAULT_CARD_NUMBERS_TYPE = [
+interface CardNumbersInputComponent {
+  cardType: cardType;
+  cardNumbers: cardNumbers;
+  isValid: boolean;
+  handleModalVisible: () => void;
+  handleCardNumbersInput: (
+    cardNumbers: cardNumbers | ((prevState: cardNumbers) => cardNumbers)
+  ) => void;
+  handleCardNumberCheck: (isCardNumbersCompleted: boolean) => void;
+}
+
+const DEFAULT_CARD_NUMBERS_TYPE: Array<cardNumberInputObject> = [
   { name: "firstNumber", type: "text" },
   { name: "secondNumber", type: "text" },
   { name: "thirdNumber", type: "password" },
@@ -19,10 +36,10 @@ export const CardNumbersInput = ({
   cardType,
   cardNumbers,
   isValid,
+  handleModalVisible,
   handleCardNumbersInput,
   handleCardNumberCheck,
-  handleModalVisible,
-}) => {
+}: CardNumbersInputComponent) => {
   const numberInputRefs = useRef([]);
 
   useEffect(() => {
@@ -43,12 +60,17 @@ export const CardNumbersInput = ({
     }
   }, [cardNumbers]);
 
-  const handleNumberChange = (e, name) => {
-    if (isNaN(e.target.value)) {
+  const handleNumberChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    name: cardNumberInputName
+  ) => {
+    const { value } = e.target;
+
+    if (Number.isNaN(value)) {
       return;
     }
 
-    handleCardNumbersInput((prev) => ({ ...prev, [name]: e.target.value }));
+    handleCardNumbersInput((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -66,7 +88,11 @@ export const CardNumbersInput = ({
             maxLength="4"
             type={type}
           />
-        )).reduce((prev, cur) => [prev, "-", cur])}
+        )).reduce((prev, cur) => (
+          <>
+            {prev}-{cur}
+          </>
+        ))}
       </InputBox>
     </InputContainer>
   );

@@ -4,17 +4,21 @@ import { inputType } from "types";
 import { COLORS } from "constants/color";
 
 interface InputBasicComponent {
-  type: inputType;
-  placeholder: string;
-  value: string;
-  onChange: () => void;
-  onBlur: () => void;
-  id: string;
-  dataTestId: string;
-  pattern: string;
-  width: string;
-  inputRef: React.RefObject<HTMLInputElement>;
-  maxLength: number;
+  type?: inputType;
+  placeholder?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  id?: string;
+  dataTestId?: string;
+  pattern?: string;
+  width?: string;
+  inputRef?:
+    | React.RefObject<HTMLInputElement>
+    | ((
+        element: React.RefObject<HTMLInputElement>
+      ) => React.RefObject<HTMLInputElement>);
+  maxLength?: string | number;
 }
 
 export const InputBasic = ({
@@ -34,12 +38,12 @@ export const InputBasic = ({
     <InputBasicStyle
       width={width}
       type={type}
-      ref={inputRef}
+      ref={inputRef as React.RefObject<HTMLInputElement>}
       placeholder={placeholder}
       value={value}
       id={id}
       pattern={pattern}
-      maxLength={maxLength}
+      maxLength={Number(maxLength)}
       onChange={onChange}
       onBlur={onBlur}
       data-testId={dataTestId}
@@ -47,7 +51,10 @@ export const InputBasic = ({
   );
 };
 
-const InputBasicStyle = styled.input<{ width: string; maxLength: number }>`
+const InputBasicStyle = styled.input<{
+  width: string;
+  maxLength: string | number;
+}>`
   background-color: ${COLORS.WHITE_100};
   color: ${COLORS.GREEN_100};
   height: 45px;

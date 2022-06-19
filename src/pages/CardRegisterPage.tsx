@@ -25,6 +25,8 @@ import {
   CardSelectModal,
   CVCHelperModal,
 } from "components/cardRegister";
+import { modalName } from "types/modalName.type";
+import { cardInputName } from "types";
 
 export const CardRegisterPage = () => {
   const { modalVisibleState, setModalState, modalName } = useModal();
@@ -63,14 +65,14 @@ export const CardRegisterPage = () => {
     }
   }, [checkInputs]);
 
-  const modalSelector = (name) => {
+  const modalSelector = (name: modalName) => {
     return () => {
       setModalState(true, name);
     };
   };
 
-  const setCheckInputStateOf = (state) => {
-    return (isCompleted) => {
+  const setCheckInputStateOf = (state: cardInputName) => {
+    return (isCompleted: boolean) => {
       setCheckInputs((prev) => ({ ...prev, [state]: isCompleted }));
     };
   };
@@ -95,10 +97,10 @@ export const CardRegisterPage = () => {
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const cardId = cards.id;
-    const formData = e.target;
+    const formData = e.target as HTMLFormElement;
     const wrappingCardData = {
       id: cardId,
       cardNickname: cardType.name,
@@ -106,10 +108,9 @@ export const CardRegisterPage = () => {
       cardType: cardType,
       expireDate: expireDate,
       ownerName: ownerName,
-      cardCVC: formData.elements["input_CVC"].value,
-      cardPassword:
-        formData.elements["input_password-0"].value +
-        formData.elements["input_password-1"].value,
+      cardCVC: formData.elements["input_CVC"].value as string,
+      cardPassword: (formData.elements["input_password-0"].value +
+        formData.elements["input_password-1"].value) as string,
     };
 
     try {

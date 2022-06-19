@@ -1,4 +1,5 @@
 import { cardType } from "types";
+import { modalName } from "types/modalName.type";
 
 export const CARD_TYPES: Array<cardType> = [
   { name: "포코", color: "gold" },
@@ -13,11 +14,13 @@ export const CARD_TYPES: Array<cardType> = [
 
 export const CARD_TYPES_DEFAULT: cardType = { name: "", color: "" };
 
+type modalNameConstant = { [key: string]: modalName };
+
 export const MODAL_NAME = {
   CARD_TYPE: "cardType",
   CARD_CVC: "cardCVC",
   ERROR: "error",
-};
+} as modalNameConstant;
 
 export const RULE_INPUT = {
   CARD_NUMBER_RULE: "[0-9]{4}",

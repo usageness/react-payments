@@ -4,7 +4,7 @@ interface card {
 }
 
 interface cardData {
-  id: any;
+  id: string | number;
   cardCVC: string;
   cardNickname: string;
   cardNumbers: cardNumbers;

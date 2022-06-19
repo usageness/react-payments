@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { cardType } from "types";
+import { COLORS } from "constants/color";
 
 interface CardSelectModalComponent {
   cardTypes: Array<cardType>;
@@ -56,7 +57,7 @@ const ModalItemDotStyle = styled.div<{ backgroundColor: string }>`
   border-radius: 50%;
   width: 2.8rem;
   height: 2.8rem;
-  background-color: ${(props) => props.backgroundColor || "#94daca"};
+  background-color: ${(props) => props.backgroundColor || COLORS.GREEN_200};
   cursor: pointer;
 `;
 

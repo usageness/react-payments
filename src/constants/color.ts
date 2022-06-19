@@ -12,6 +12,7 @@ export const COLORS = {
   BLACK_100: "#000000",
   YELLOW_100: "#cbba64",
   GREEN_100: "#04c09e",
+  GREEN_200: "#94daca",
   RED_100: "#ff0000",
   RED_200: "#ff6d6d",
 };

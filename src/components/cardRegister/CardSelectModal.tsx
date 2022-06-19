@@ -1,20 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import { cardType } from "types";
+
+interface CardSelectModalComponent {
+  cardTypes: Array<cardType>;
+  handleVisible: () => void;
+  handleCardType: React.Dispatch<React.SetStateAction<cardType>>;
+  handleCardTypeCheck: (state: boolean) => void;
+}
 
 export const CardSelectModal = ({
   cardTypes,
   handleVisible,
   handleCardType,
   handleCardTypeCheck,
-}) => {
-  const handleCardTypeSelect = (card) => {
+}: CardSelectModalComponent) => {
+  const handleCardTypeSelect = (card: cardType) => {
     handleCardType(card);
     handleCardTypeCheck(true);
     handleVisible();
   };
 
   return (
-    <GridColumnsStyle col={4}>
+    <GridColumnsStyle>
       {cardTypes.map((card) => (
         <ModalItemContainerStyle
           key={card.name}
@@ -43,7 +51,7 @@ const ModalItemContainerStyle = styled.div`
   align-items: center;
 `;
 
-const ModalItemDotStyle = styled.div`
+const ModalItemDotStyle = styled.div<{ backgroundColor: string }>`
   margin: 0.5rem 1rem;
   border-radius: 50%;
   width: 2.8rem;

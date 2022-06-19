@@ -15,9 +15,7 @@ interface InputBasicComponent {
   width?: string;
   inputRef?:
     | React.RefObject<HTMLInputElement>
-    | ((
-        element: React.RefObject<HTMLInputElement>
-      ) => React.RefObject<HTMLInputElement>);
+    | ((element: HTMLInputElement) => HTMLInputElement);
   maxLength?: string | number;
 }
 

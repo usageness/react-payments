@@ -9,11 +9,19 @@ import {
   Dot,
 } from "components/common";
 
-export const CardPasswordInput = ({ isValid, handleCardPasswordCheck }) => {
-  const passwordInputRefs = useRef([]);
+interface CardPasswordInputComponent {
+  isValid: boolean;
+  handleCardPasswordCheck: (isCompletePassword: boolean) => void;
+}
 
-  const handlePasswordChange = (e) => {
-    if (isNaN(e.target.value)) {
+export const CardPasswordInput = ({
+  isValid,
+  handleCardPasswordCheck,
+}: CardPasswordInputComponent) => {
+  const passwordInputRefs = useRef<Array<HTMLInputElement>>([]);
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (Number.isNaN(e.target.value)) {
       e.target.value = "";
       return;
     }

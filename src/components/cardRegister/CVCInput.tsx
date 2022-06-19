@@ -10,18 +10,26 @@ import {
   TipButton,
 } from "components/common";
 
+interface CVCInputComponent {
+  isValid: boolean;
+  handleCardCVCCheck: (isValid: boolean) => void;
+  handleModalVisible: () => void;
+}
+
 export const CVCInput = ({
   isValid,
   handleCardCVCCheck,
   handleModalVisible,
-}) => {
-  const handleCVCChange = (e) => {
-    if (isNaN(e.target.value)) {
-      e.target.value = e.target.value.slice(0, e.target.value.length - 1);
+}: CVCInputComponent) => {
+  const handleCVCChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+
+    if (Number.isNaN(value)) {
+      e.target.value = value.slice(0, value.length - 1);
       return;
     }
 
-    handleCardCVCCheck(e.target.value.length === 3);
+    handleCardCVCCheck(value.length === 3);
   };
 
   return (

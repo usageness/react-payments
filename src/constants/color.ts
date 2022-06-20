@@ -15,4 +15,4 @@ export const COLORS = {
   GREEN_200: "#94daca",
   RED_100: "#ff0000",
   RED_200: "#ff6d6d",
-};
+} as const;

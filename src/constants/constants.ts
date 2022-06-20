@@ -27,4 +27,4 @@ export const RULE_INPUT = {
   EXPIRE_DATE_RULE: "[0-9]{2}",
   CVC_RULE: "[0-9]{3}",
   PASSWORD_RULE: "[0-9]{1}",
-};
+} as const;

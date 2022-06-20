@@ -2,14 +2,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./Payments.css";
 
-import { cards, CardContext, errorState, ErrorContext } from "contexts";
+import { cards, CardContext, initErrorState, ErrorContext } from "contexts";
 import { CardRegisterPage } from "pages/CardRegisterPage";
 import { CardModifyPage } from "pages/CardModifyPage";
 import { CardListPage } from "pages/CardListPage";
 
 function Payments() {
   return (
-    <ErrorContext.Provider value={errorState}>
+    <ErrorContext.Provider value={initErrorState}>
       <CardContext.Provider value={cards}>
         <div className="App">
           <Routes>

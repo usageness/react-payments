@@ -1,8 +1,8 @@
 import React from "react";
-import { errorStateType } from "types";
+import { errorState } from "types";
 
-export const errorState: errorStateType = {
+export const initErrorState: errorState = {
   errorMessage: "에러 메시지가 입력되지 않았습니다.",
 };
 
-export const ErrorContext = React.createContext(errorState);
+export const ErrorContext = React.createContext(initErrorState);

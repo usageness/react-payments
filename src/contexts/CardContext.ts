@@ -1,5 +1,5 @@
 import React from "react";
-import { card } from "types";
+import { card } from "types/context.interface";
 
 export const cards: card = {
   id: 0,

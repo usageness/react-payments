@@ -1,8 +1,3 @@
-interface card {
-  id: number;
-  list: Array<cardData>;
-}
-
 interface cardData {
   id: string | number;
   cardCVC: string;
@@ -52,7 +47,7 @@ type cardNumberInputName =
 type ownerName = string;
 
 export type {
-  card,
+  cardData,
   cardType,
   cardInputName,
   cardNumbers,

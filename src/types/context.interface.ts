@@ -1,12 +1,12 @@
-import { card } from "./card.interface";
+import { cardData } from "./card.interface";
 
-interface cardsType {
+interface card {
   id: number;
-  list: Array<card>;
+  list: Array<cardData>;
 }
 
-interface errorStateType {
+interface errorState {
   errorMessage: string;
 }
 
-export type { errorStateType, cardsType };
+export type { errorState, card };

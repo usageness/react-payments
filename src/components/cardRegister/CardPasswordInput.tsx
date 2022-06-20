@@ -9,7 +9,7 @@ import {
   Dot,
 } from "components/common";
 
-interface CardPasswordInputComponent {
+interface cardPasswordInputComponent {
   isValid: boolean;
   handleCardPasswordCheck: (isCompletePassword: boolean) => void;
 }
@@ -17,7 +17,7 @@ interface CardPasswordInputComponent {
 export const CardPasswordInput = ({
   isValid,
   handleCardPasswordCheck,
-}: CardPasswordInputComponent) => {
+}: cardPasswordInputComponent) => {
   const passwordInputRefs = useRef<Array<HTMLInputElement>>([]);
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {

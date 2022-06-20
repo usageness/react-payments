@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { COLORS } from "constants/color";
 
-interface ModalComponent extends React.PropsWithChildren {
+interface modalComponent extends React.PropsWithChildren {
   visible: boolean;
   handleVisible: () => void;
 }
 
-export const Modal = ({ children, visible, handleVisible }: ModalComponent) => {
+export const Modal = ({ children, visible, handleVisible }: modalComponent) => {
   return (
     <ModalDimmedStyle onClick={handleVisible} isVisible={visible}>
       <ModalStyle>{children}</ModalStyle>

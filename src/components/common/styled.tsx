@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { FlexWrapperType } from "types";
+import { flexWrapperType } from "types";
 
 export const InputContainer = styled.div`
   margin: 16px 0;
 `;
 
-export const FlexWrapper = styled.div<FlexWrapperType>`
+export const FlexWrapper = styled.div<flexWrapperType>`
   width: ${(props) => props.width || "auto"};
   height: ${(props) => props.height || "auto"};
   display: flex;

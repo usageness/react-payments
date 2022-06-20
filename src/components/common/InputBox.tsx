@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { justifyContent } from "types";
 
-interface InputBoxComponent extends React.PropsWithChildren {
+interface inputBoxComponent extends React.PropsWithChildren {
   width?: string;
   color?: string;
   backgroundColor?: string;
@@ -18,7 +18,7 @@ export const InputBox = ({
   backgroundColor,
   justifyContent,
   padding,
-}: InputBoxComponent) => {
+}: inputBoxComponent) => {
   return (
     <InputBoxStyle
       width={width}

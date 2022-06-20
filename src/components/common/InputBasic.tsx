@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { inputType } from "types";
 import { COLORS } from "constants/color";
 
-interface InputBasicComponent {
+interface inputBasicComponent {
   type?: inputType;
   placeholder?: string;
   value?: string;
@@ -31,7 +31,7 @@ export const InputBasic = ({
   width,
   inputRef,
   maxLength,
-}: InputBasicComponent) => {
+}: inputBasicComponent) => {
   return (
     <InputBasicStyle
       width={width}

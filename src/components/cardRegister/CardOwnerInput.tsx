@@ -2,7 +2,7 @@ import React from "react";
 
 import { InputBasic, InputTitle, InputContainer } from "components/common";
 
-interface CardOwnerInputComponent {
+interface cardOwnerInputComponent {
   ownerName: string;
   handleOwnerNameInput: (value: string) => void;
 }
@@ -10,7 +10,7 @@ interface CardOwnerInputComponent {
 export const CardOwnerInput = ({
   ownerName,
   handleOwnerNameInput,
-}: CardOwnerInputComponent) => {
+}: cardOwnerInputComponent) => {
   const handleOwnerNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleOwnerNameInput(e.target.value);
   };

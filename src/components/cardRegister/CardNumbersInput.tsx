@@ -14,7 +14,7 @@ import {
   cardNumberInputObject,
 } from "types";
 
-interface CardNumbersInputComponent {
+interface cardNumbersInputComponent {
   cardType: cardType;
   cardNumbers: cardNumbers;
   isValid: boolean;
@@ -39,7 +39,7 @@ export const CardNumbersInput = ({
   handleModalVisible,
   handleCardNumbersInput,
   handleCardNumberCheck,
-}: CardNumbersInputComponent) => {
+}: cardNumbersInputComponent) => {
   const numberInputRefs = useRef([]);
 
   useEffect(() => {

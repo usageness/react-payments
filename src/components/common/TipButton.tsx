@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { COLORS } from "constants/color";
 
-interface TipButtonComponent {
+interface tipButtonComponent {
   onClick?: () => void;
   contents: string;
   color?: string;
 }
 
-export const TipButton = ({ onClick, contents, color }: TipButtonComponent) => {
+export const TipButton = ({ onClick, contents, color }: tipButtonComponent) => {
   return (
     <TipButtonContainerStyle onClick={onClick} color={color}>
       <div>{contents}</div>

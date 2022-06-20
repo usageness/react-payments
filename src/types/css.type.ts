@@ -1,4 +1,4 @@
-interface FlexWrapperType {
+interface flexWrapperType {
   width?: string;
   height?: string;
   flexDirection?: flexDirection;
@@ -31,7 +31,7 @@ type alignItems =
   | "unset";
 
 export type {
-  FlexWrapperType,
+  flexWrapperType,
   textAlign,
   buttonType,
   inputType,

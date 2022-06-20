@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { COLORS } from "constants/color";
 import { cardType, cardNumbers, expireDate, ownerName } from "types";
 
-interface CardComponent {
+interface cardComponent {
   cardType: cardType;
   cardNumbers: cardNumbers;
   expireDate: expireDate;
@@ -17,7 +17,7 @@ export const Card = ({
   expireDate,
   ownerName,
   handleModalVisible,
-}: CardComponent) => {
+}: cardComponent) => {
   const formattedCardNumbers = Object.values(cardNumbers)
     .map((number: string, idx: number) =>
       idx <= 1 ? number : "•".repeat(number.length)

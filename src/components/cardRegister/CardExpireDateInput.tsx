@@ -10,7 +10,7 @@ import {
 } from "components/common";
 import { expireDate } from "types";
 
-interface CardExpireDateInputComponent {
+interface cardExpireDateInputComponent {
   expireDate: expireDate;
   isValid: boolean;
   handleExpireDateInput: (
@@ -24,7 +24,7 @@ export const CardExpireDateInput = ({
   isValid,
   handleExpireDateInput,
   handleCardExpireCheck,
-}: CardExpireDateInputComponent) => {
+}: cardExpireDateInputComponent) => {
   useEffect(() => {
     if (expireDate.year === "" || expireDate.month === "") {
       return;

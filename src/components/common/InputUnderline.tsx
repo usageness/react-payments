@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { COLORS } from "constants/color";
 import { inputType } from "types";
 
-interface InputUnderlineComponent {
+interface inputUnderlineComponent {
   type?: inputType;
   placeholder?: string;
   value?: string;
@@ -25,7 +25,7 @@ export const InputUnderline = ({
   pattern,
   inputRef,
   maxLength,
-}: InputUnderlineComponent) => {
+}: inputUnderlineComponent) => {
   return (
     <InputUnderlineStyle
       width={width}

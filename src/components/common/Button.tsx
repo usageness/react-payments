@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { COLORS } from "constants/color";
 import { textAlign, buttonType } from "types";
 
-interface ButtonComponent extends React.PropsWithChildren {
+interface buttonComponent extends React.PropsWithChildren {
   onClick?: () => void;
   disabled?: boolean;
   type?: buttonType;
@@ -16,7 +16,7 @@ export const Button = ({
   disabled,
   type,
   textAlign,
-}: ButtonComponent) => {
+}: buttonComponent) => {
   return (
     <ButtonBox textAlign={textAlign}>
       <ButtonText onClick={onClick} type={type} disabled={disabled}>

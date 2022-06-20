@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { cardType } from "types";
 import { COLORS } from "constants/color";
 
-interface CardSelectModalComponent {
+interface cardSelectModalComponent {
   cardTypes: Array<cardType>;
   handleVisible: () => void;
   handleCardType: React.Dispatch<React.SetStateAction<cardType>>;
@@ -15,7 +15,7 @@ export const CardSelectModal = ({
   handleVisible,
   handleCardType,
   handleCardTypeCheck,
-}: CardSelectModalComponent) => {
+}: cardSelectModalComponent) => {
   const handleCardTypeSelect = (card: cardType) => {
     handleCardType(card);
     handleCardTypeCheck(true);

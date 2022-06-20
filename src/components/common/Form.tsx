@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-interface FormComponent {
+interface FormComponent extends React.PropsWithChildren {
   onSubmit: (e: React.FormEvent) => void;
-  children: React.ReactNode;
 }
 
 export const Form = ({ onSubmit, children }: FormComponent) => {

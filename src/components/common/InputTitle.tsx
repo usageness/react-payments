@@ -2,8 +2,7 @@ import { COLORS } from "constants/color";
 import React from "react";
 import styled from "styled-components";
 
-interface InputTitleComponent {
-  children?: React.ReactNode;
+interface InputTitleComponent extends React.PropsWithChildren {
   isValid?: boolean;
   htmlFor?: string;
 }

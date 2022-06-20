@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { COLORS } from "constants/color";
 import { textAlign, buttonType } from "types";
 
-interface ButtonComponent {
-  children?: React.ReactNode;
+interface ButtonComponent extends React.PropsWithChildren {
   onClick?: () => void;
   disabled?: boolean;
   type?: buttonType;

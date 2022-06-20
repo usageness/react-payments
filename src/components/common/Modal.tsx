@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { COLORS } from "constants/color";
 
-interface ModalComponent {
-  children: React.ReactNode;
+interface ModalComponent extends React.PropsWithChildren {
   visible: boolean;
   handleVisible: () => void;
 }

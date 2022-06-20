@@ -3,8 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { justifyContent } from "types";
 
-interface InputBoxComponent {
-  children?: React.ReactNode;
+interface InputBoxComponent extends React.PropsWithChildren {
   width?: string;
   color?: string;
   backgroundColor?: string;

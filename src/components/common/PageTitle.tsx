@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-interface PageTitleComponent {
-  children: React.ReactNode;
+interface PageTitleComponent extends React.PropsWithChildren {
   onClick?: () => void;
   visible?: boolean;
 }

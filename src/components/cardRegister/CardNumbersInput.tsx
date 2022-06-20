@@ -40,7 +40,7 @@ export const CardNumbersInput = ({
   handleCardNumbersInput,
   handleCardNumberCheck,
 }: cardNumbersInputComponent) => {
-  const numberInputRefs = useRef([]);
+  const numberInputRefs = useRef<Array<HTMLInputElement>>([]);
 
   useEffect(() => {
     const isCardNumbersCompleted = Object.values(cardNumbers).every(

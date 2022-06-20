@@ -37,7 +37,7 @@ export const CardExpireDateInput = ({
   const handleMonthInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
 
-    if (Number.isNaN(value) || parseInt(value) > 12) {
+    if (Number.isNaN(value) || Number(value) > 12) {
       return;
     }
 
@@ -131,18 +131,18 @@ export const CardExpireDateInput = ({
 const { currentYear, currentMonth } = currentDate();
 
 const isCardExpireDateValidate = (expireDate: expireDate) => {
-  if (parseInt(expireDate.year) < parseInt(currentYear)) {
+  const year = Number(expireDate.year);
+  const month = Number(expireDate.month);
+
+  if (year < currentYear) {
     return false;
   }
 
-  if (
-    expireDate.year === currentYear &&
-    parseInt(expireDate.month) < currentMonth
-  ) {
+  if (year === currentYear && month < currentMonth) {
     return false;
   }
 
-  if (parseInt(expireDate.month) > 12 || parseInt(expireDate.month) < 1) {
+  if (month > 12 || month < 1) {
     return false;
   }
 

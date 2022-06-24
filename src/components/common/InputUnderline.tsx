@@ -1,18 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { COLORS } from "constants/color";
-import { inputType } from "types";
 
-interface inputUnderlineComponent {
-  type?: inputType;
-  placeholder?: string;
-  value?: string;
-  onChange?: () => void;
-  id?: string;
-  width?: string;
-  pattern?: string;
+interface inputUnderlineComponent
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   inputRef?: React.RefObject<HTMLInputElement>;
-  maxLength?: number;
 }
 
 export const InputUnderline = ({

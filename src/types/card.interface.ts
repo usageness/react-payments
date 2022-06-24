@@ -1,5 +1,5 @@
 interface cardData {
-  id: string | number;
+  id: string;
   cardCVC: string;
   cardNickname: string;
   cardNumbers: cardNumbers;

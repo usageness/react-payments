@@ -103,7 +103,7 @@ export const CardRegisterPage = () => {
     const cardId = cards.id;
     const formData = e.target as HTMLFormElement;
     const wrappingCardData = {
-      id: cardId,
+      id: String(cardId),
       cardNickname: cardType.name,
       cardNumbers: cardNumbers,
       cardType: cardType,

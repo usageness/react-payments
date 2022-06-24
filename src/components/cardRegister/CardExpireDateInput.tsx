@@ -36,10 +36,11 @@ export const CardExpireDateInput = ({
 
   const handleMonthInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
+    const valueAsNumber = Number(value);
 
-    if (Number.isNaN(value) || Number(value) > 12) {
-      return;
-    }
+    if (Number.isNaN(valueAsNumber)) return;
+
+    if (valueAsNumber > 12) return;
 
     handleExpireDateInput(
       (prev: expireDate): expireDate => ({

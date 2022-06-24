@@ -1,22 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { inputType } from "types";
 import { COLORS } from "constants/color";
 
-interface inputBasicComponent {
-  type?: inputType;
-  placeholder?: string;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  id?: string;
+interface inputBasicComponent
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   dataTestId?: string;
-  pattern?: string;
-  width?: string;
   inputRef?:
     | React.RefObject<HTMLInputElement>
     | ((element: HTMLInputElement) => HTMLInputElement);
-  maxLength?: string | number;
 }
 
 export const InputBasic = ({
@@ -50,7 +41,7 @@ export const InputBasic = ({
 };
 
 const InputBasicStyle = styled.input<{
-  width: string;
+  width: string | number;
   maxLength: string | number;
 }>`
   background-color: ${COLORS.WHITE_100};

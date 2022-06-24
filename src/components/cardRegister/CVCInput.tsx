@@ -42,7 +42,7 @@ export const CVCInput = ({
           <InputBasic
             type="password"
             id="input_CVC"
-            maxLength="3"
+            maxLength={3}
             pattern={RULE_INPUT.CVC_RULE}
             onChange={handleCVCChange}
           />

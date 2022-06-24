@@ -54,7 +54,7 @@ export const CardPasswordInput = ({
             type="password"
             width="20%"
             pattern={RULE_INPUT.PASSWORD_RULE}
-            maxLength="1"
+            maxLength={1}
           />
         ))}
         <Dot />

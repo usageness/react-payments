@@ -108,7 +108,7 @@ export const CardExpireDateInput = ({
           onChange={handleMonthInput}
           onBlur={handleMonthBlur}
           type="text"
-          maxLength="2"
+          maxLength={2}
           pattern={RULE_INPUT.EXPIRE_DATE_RULE}
           placeholder="MM"
         />
@@ -120,7 +120,7 @@ export const CardExpireDateInput = ({
           onChange={handleYearInput}
           onBlur={handleYearBlur}
           type="text"
-          maxLength="2"
+          maxLength={2}
           pattern={RULE_INPUT.EXPIRE_DATE_RULE}
           placeholder="YY"
         />

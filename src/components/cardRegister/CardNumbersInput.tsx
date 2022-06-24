@@ -85,7 +85,7 @@ export const CardNumbersInput = ({
             value={cardNumbers?.[name]}
             onChange={(e) => handleNumberChange(e, name)}
             pattern={RULE_INPUT.CARD_NUMBER_RULE}
-            maxLength="4"
+            maxLength={4}
             type={type}
           />
         )).reduce((prev, cur) => (

@@ -27,6 +27,7 @@ import {
 } from "components/cardRegister";
 import { modalName } from "types/modalName.type";
 import { cardInputName } from "types";
+import { modalContents } from "types/modalContents.interface";
 
 export const CardRegisterPage = () => {
   const { modalVisibleState, setModalState, modalName } = useModal();
@@ -77,7 +78,7 @@ export const CardRegisterPage = () => {
     };
   };
 
-  const loadModal = () => {
+  const loadModal: () => modalContents = () => {
     switch (modalName) {
       case MODAL_NAME.CARD_TYPE:
         return (

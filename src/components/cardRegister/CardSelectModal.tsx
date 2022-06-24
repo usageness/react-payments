@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { cardType } from "types";
 import { COLORS } from "constants/color";
+import { modalContentsComponent } from "types/modalContents.interface";
 
 interface cardSelectModalComponent {
   cardTypes: Array<cardType>;
@@ -10,7 +11,7 @@ interface cardSelectModalComponent {
   handleCardTypeCheck: (state: boolean) => void;
 }
 
-export const CardSelectModal = ({
+export const CardSelectModal: modalContentsComponent = ({
   cardTypes,
   handleVisible,
   handleCardType,

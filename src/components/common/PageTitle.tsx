@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 interface pageTitleComponent extends React.PropsWithChildren {
-  onClick?: () => void;
-  visible?: boolean;
+  onClick: () => void;
+  visible: boolean;
 }
 
 export const PageTitle = ({
   children,
   onClick,
   visible,
-}: pageTitleComponent) => {
+}: Partial<pageTitleComponent>) => {
   return (
     <PageTitleWrapperStyle>
       <BackwardButton onClick={onClick} visible={visible} />

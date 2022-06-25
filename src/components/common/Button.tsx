@@ -5,7 +5,7 @@ import * as CSS from "csstype";
 
 interface buttonComponent
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  textAlign?: CSS.Property.TextAlign;
+  textAlign: CSS.Property.TextAlign;
 }
 
 export const Button = ({
@@ -14,7 +14,7 @@ export const Button = ({
   disabled,
   type,
   textAlign,
-}: React.PropsWithChildren<buttonComponent>) => {
+}: Partial<React.PropsWithChildren<buttonComponent>>) => {
   return (
     <ButtonBox textAlign={textAlign}>
       <ButtonText onClick={onClick} type={type} disabled={disabled}>

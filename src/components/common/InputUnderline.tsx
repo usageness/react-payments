@@ -4,7 +4,7 @@ import { COLORS } from "constants/color";
 
 interface inputUnderlineComponent
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  inputRef?: React.RefObject<HTMLInputElement>;
+  inputRef: React.RefObject<HTMLInputElement>;
 }
 
 export const InputUnderline = ({
@@ -17,7 +17,7 @@ export const InputUnderline = ({
   pattern,
   inputRef,
   maxLength,
-}: inputUnderlineComponent) => {
+}: Partial<inputUnderlineComponent>) => {
   return (
     <InputUnderlineStyle
       width={width}

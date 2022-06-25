@@ -2,16 +2,16 @@ import { COLORS } from "constants/color";
 import React from "react";
 import styled from "styled-components";
 
-interface inputTitleComponent extends React.PropsWithChildren {
-  isValid?: boolean;
-  htmlFor?: string;
+interface inputTitleComponent
+  extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  isValid: boolean;
 }
 
 export const InputTitle = ({
   children,
   isValid,
   htmlFor,
-}: inputTitleComponent) => {
+}: Partial<React.PropsWithChildren<inputTitleComponent>>) => {
   return (
     <InputTitleStyle htmlFor={htmlFor}>
       {children} <ValidChecker isValid={isValid}>✔️</ValidChecker>

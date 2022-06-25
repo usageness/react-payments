@@ -3,9 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import * as CSS from "csstype";
 
-interface inputBoxComponent extends React.PropsWithChildren {
-  width?: string;
-  color?: string;
+interface inputBoxComponent
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   backgroundColor?: string;
   justifyContent?: CSS.Property.JustifyContent;
   padding?: string;
@@ -18,10 +17,10 @@ export const InputBox = ({
   backgroundColor,
   justifyContent,
   padding,
-}: inputBoxComponent) => {
+}: Partial<React.PropsWithChildren<inputBoxComponent>>) => {
   return (
     <InputBoxStyle
-      width={width}
+      width={String(width)}
       color={color}
       backgroundColor={backgroundColor}
       justifyContent={justifyContent}

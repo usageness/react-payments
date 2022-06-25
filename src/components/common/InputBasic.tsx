@@ -4,8 +4,8 @@ import { COLORS } from "constants/color";
 
 interface inputBasicComponent
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  dataTestId?: string;
-  inputRef?:
+  dataTestId: string;
+  inputRef:
     | React.RefObject<HTMLInputElement>
     | ((element: HTMLInputElement) => HTMLInputElement);
 }
@@ -22,7 +22,7 @@ export const InputBasic = ({
   width,
   inputRef,
   maxLength,
-}: inputBasicComponent) => {
+}: Partial<inputBasicComponent>) => {
   return (
     <InputBasicStyle
       width={width}

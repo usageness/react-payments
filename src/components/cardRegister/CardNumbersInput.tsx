@@ -13,6 +13,7 @@ import {
   cardType,
   cardNumberInputObject,
 } from "types";
+import { COLORS } from "constants/color";
 
 interface cardNumbersInputComponent {
   cardType: cardType;
@@ -76,7 +77,7 @@ export const CardNumbersInput = ({
   return (
     <InputContainer>
       <InputTitle isValid={isValid}>카드 번호</InputTitle>
-      <InputBox color="#04c09e" padding="0 5%">
+      <InputBox color={COLORS.GREEN_100} padding="0 5%">
         {DEFAULT_CARD_NUMBERS_TYPE.map(({ name, type }, i) => (
           <InputBasic
             key={name}

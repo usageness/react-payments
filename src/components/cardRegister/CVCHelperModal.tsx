@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import cvc from "assets/cvc.png";
 import { modalContentsComponent } from "types/modalContents.interface";

@@ -14,22 +14,17 @@ interface cardType {
   color: string;
 }
 
-interface cardNumbers {
-  firstNumber: string;
-  secondNumber: string;
-  thirdNumber: string;
-  fourthNumber: string;
-}
+type cardNumbers = Record<
+  "firstNumber" | "secondNumber" | "thirdNumber" | "fourthNumber",
+  string
+>;
 
 interface cardNumberInputObject {
   name: cardNumberInputName;
   type: "text" | "password";
 }
 
-interface expireDate {
-  month: string;
-  year: string;
-}
+type expireDate = Record<"month" | "year", string>;
 
 type cardInputName =
   | "cardNumbers"

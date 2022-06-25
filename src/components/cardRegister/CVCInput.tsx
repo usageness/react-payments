@@ -24,7 +24,7 @@ export const CVCInput = ({
   const handleCVCChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
 
-    if (Number.isNaN(value)) {
+    if (Number.isNaN(Number(value))) {
       e.target.value = value.slice(0, value.length - 1);
       return;
     }

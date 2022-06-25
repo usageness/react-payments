@@ -14,7 +14,7 @@ export const CARD_TYPES: Array<cardType> = [
 
 export const CARD_TYPES_DEFAULT: cardType = { name: "", color: "" };
 
-type modalNameConstant = { [key: string]: modalName };
+type modalNameConstant = Record<string, modalName>;
 
 export const MODAL_NAME = {
   CARD_TYPE: "cardType",

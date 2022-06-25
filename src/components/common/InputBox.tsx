@@ -1,13 +1,13 @@
 import { COLORS } from "constants/color";
 import React from "react";
 import styled from "styled-components";
-import { justifyContent } from "types";
+import * as CSS from "csstype";
 
 interface inputBoxComponent extends React.PropsWithChildren {
   width?: string;
   color?: string;
   backgroundColor?: string;
-  justifyContent?: justifyContent;
+  justifyContent?: CSS.Property.JustifyContent;
   padding?: string;
 }
 
@@ -35,7 +35,7 @@ export const InputBox = ({
 const InputBoxStyle = styled.div<{
   backgroundColor: string;
   width: string;
-  justifyContent: justifyContent;
+  justifyContent: CSS.Property.JustifyContent;
   padding: string;
 }>`
   display: flex;

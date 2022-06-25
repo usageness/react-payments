@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { COLORS } from "constants/color";
-import { textAlign } from "types";
+import * as CSS from "csstype";
 
 interface buttonComponent
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  textAlign?: textAlign;
+  textAlign?: CSS.Property.TextAlign;
 }
 
 export const Button = ({
@@ -24,7 +24,7 @@ export const Button = ({
   );
 };
 
-const ButtonBox = styled.div<{ textAlign: textAlign }>`
+const ButtonBox = styled.div<{ textAlign: CSS.Property.TextAlign }>`
   width: 100%;
   text-align: ${(props) => (props.textAlign ? props.textAlign : "right")};
 `;
